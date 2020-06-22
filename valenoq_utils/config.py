@@ -8,7 +8,7 @@ PARENT_HOST = os.environ.get("PARENT_HOST")
 DEVELOP_HOST = os.environ.get("DEVELOP_HOST")
 
 def get_config(name_container):
-    address = "http://%s:%d?name=%s" %(CONFIG_HOST, CONFIG_PORT, name_container)
+    address = "http://%s:%s?name=%s" %(CONFIG_HOST, CONFIG_PORT, name_container)
     if PARENT_HOST == DEVELOP_HOST:
         address += "&type=development"
     reply = urllib.request.urlopen(address).read()
